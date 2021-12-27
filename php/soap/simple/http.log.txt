@@ -1,0 +1,29 @@
+string(17) "hello: hello word"
+
+Returning value of __soapCall() call: hello: hello word
+Dumping request headers:
+POST /server.php HTTP/1.1
+Host: localhost:12345
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/7.3.24-(to be removed in future macOS)
+Content-Type: text/xml; charset=utf-8
+SOAPAction: "http://localhost:12345/server.php#hello"
+Content-Length: 512
+
+
+Dumping request:
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://localhost:12345/server.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:hello><param0 xsi:type="xsd:string">hello word</param0></ns1:hello></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+Dumping response headers:
+HTTP/1.1 200 OK
+Host: localhost:12345
+Date: Sat, 11 Dec 2021 08:54:38 GMT
+Connection: close
+X-Powered-By: PHP/7.3.24-(to be removed in future macOS)
+Content-Type: text/xml; charset=utf-8
+Content-Length: 535
+
+Dumping response:
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://localhost:12345/server.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:helloResponse><return xsi:type="xsd:string">hello: hello word</return></ns1:helloResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
